@@ -1,30 +1,24 @@
 package heaps.basic;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class KthLargest {
-    int kLargestElement;
-    List<Integer> arr = new ArrayList<>();
+    PriorityQueue<Integer> integerPriorityQueue = new PriorityQueue<>();
     int k;
 
     public KthLargest(int k, int[] nums) {
-
-        for (int i : nums) {
-            arr.add(i);
-        }
-        arr.sort(Collections.reverseOrder());
         this.k = k;
-        this.kLargestElement = arr.get(k-1);
+        for (int i : nums) add(i);
     }
 
     public int add(int val) {
-        arr.add(val);
-        arr.sort(Collections.reverseOrder());
-        kLargestElement = arr.get(k-1);
-        return kLargestElement;
+        if (integerPriorityQueue.size() < k) {
+            integerPriorityQueue.offer(val);
+        } else if (val > integerPriorityQueue.peek()){
+            integerPriorityQueue.poll();
+            integerPriorityQueue.offer(val);
+        }
+        return integerPriorityQueue.peek();
     }
 
 
