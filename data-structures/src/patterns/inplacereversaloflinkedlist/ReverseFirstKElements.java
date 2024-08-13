@@ -10,7 +10,11 @@ public class ReverseFirstKElements {
         }
     }
 
-    public ListNode reverseFirstKElements(ListNode head) {
+    public ListNode reverseFirstKElements(ListNode head, int k) {
+
+
+
+
         return head;
 
     }
