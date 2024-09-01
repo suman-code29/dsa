@@ -87,6 +87,13 @@ public class Practice {
         }
     }
 
+    public int testCode() {
+        int[] arr = {1,2,3,4,5,6,7,8,9,15};
+        List<List<Integer>> result = quadrpletSumToTarget(arr, 30);
+        System.out.println(result);
+        return 0;
+    }
+
 
     public static void main(String[] args) {
         Practice practice = new Practice();
